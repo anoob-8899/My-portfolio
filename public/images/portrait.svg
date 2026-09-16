@@ -1,0 +1,46 @@
+<svg width="600" height="700" viewBox="0 0 600 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="portraitGlow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#FF174F" stop-opacity="0.25" />
+      <stop offset="60%" stop-color="#20272A" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#050505" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="subjectGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#20272A" />
+      <stop offset="50%" stop-color="#0D0F10" />
+      <stop offset="100%" stop-color="#050505" />
+    </linearGradient>
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF174F" />
+      <stop offset="50%" stop-color="#FF174F" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#20272A" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background glow -->
+  <circle cx="300" cy="350" r="280" fill="url(#portraitGlow)" />
+
+  <!-- Outer Ring Accent -->
+  <circle cx="300" cy="320" r="220" stroke="url(#ringGrad)" stroke-width="2" stroke-dasharray="8 6" opacity="0.6" />
+
+  <!-- Geometric Abstract Silhouette Representation -->
+  <g opacity="0.85">
+    <!-- Shoulder structure -->
+    <path d="M 120 620 C 180 500, 420 500, 480 620 L 520 700 L 80 700 Z" fill="url(#subjectGrad)" stroke="#20272A" stroke-width="1.5" />
+    
+    <!-- Neck -->
+    <rect x="260" y="380" width="80" height="140" rx="40" fill="#0D0F10" stroke="#20272A" stroke-width="1" />
+    
+    <!-- Head Outline -->
+    <ellipse cx="300" cy="300" rx="90" ry="120" fill="#0D0F10" stroke="url(#ringGrad)" stroke-width="2" />
+    
+    <!-- High-tech abstract face contours -->
+    <path d="M 250 280 C 270 310, 330 310, 350 280" stroke="#F4F2EE" stroke-width="1.5" stroke-linecap="round" opacity="0.5" />
+    <path d="M 280 340 L 320 340" stroke="#FF174F" stroke-width="2" stroke-linecap="round" />
+    
+    <!-- Subtle overlay dots grid -->
+    <circle cx="300" cy="240" r="3" fill="#FF174F" />
+    <circle cx="260" cy="270" r="2" fill="#F4F2EE" opacity="0.4" />
+    <circle cx="340" cy="270" r="2" fill="#F4F2EE" opacity="0.4" />
+  </g>
+</svg>
