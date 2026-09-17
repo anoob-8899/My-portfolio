@@ -13,9 +13,11 @@ export function CustomCursor() {
   const requestRef = useRef<number>();
 
   useEffect(() => {
-    // Disable on touch devices or devices without fine pointer control
+    // Disable on touch devices or devices with reduced motion preferences
     const mediaQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
-    if (!mediaQuery.matches) {
+    const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    if (!mediaQuery.matches || reducedMotionQuery.matches) {
       setIsTouchDevice(true);
       return;
     }

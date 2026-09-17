@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -16,9 +16,12 @@ export function About() {
   const portraitFrameRef = useRef<HTMLDivElement>(null);
   const headlineTopRef = useRef<HTMLDivElement>(null);
   const headlineBottomRef = useRef<HTMLDivElement>(null);
-  const bioRef = useRef<HTMLDivElement>(null);
+  const statementRef = useRef<HTMLDivElement>(null);
+  const pillarsRef = useRef<HTMLDivElement>(null);
   const metadataRef = useRef<HTMLDivElement>(null);
   const transitionRef = useRef<HTMLDivElement>(null);
+
+  const [activePillar, setActivePillar] = useState<number | null>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -101,10 +104,10 @@ export function About() {
           );
         }
 
-        // 5. Bio Copy reveal
-        if (bioRef.current) {
+        // 5. Statement reveal
+        if (statementRef.current) {
           gsap.fromTo(
-            bioRef.current.children,
+            statementRef.current.children,
             { opacity: 0, y: 25 },
             {
               opacity: 1,
@@ -113,14 +116,33 @@ export function About() {
               stagger: 0.12,
               ease: "power3.out",
               scrollTrigger: {
-                trigger: bioRef.current,
+                trigger: statementRef.current,
                 start: "top 85%",
               },
             }
           );
         }
 
-        // 6. Metadata reveal
+        // 6. Pillars reveal
+        if (pillarsRef.current) {
+          gsap.fromTo(
+            pillarsRef.current.children,
+            { opacity: 0, y: 30 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.8,
+              stagger: 0.1,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: pillarsRef.current,
+                start: "top 80%",
+              },
+            }
+          );
+        }
+
+        // 7. Metadata reveal
         if (metadataRef.current) {
           gsap.fromTo(
             metadataRef.current.children,
@@ -139,7 +161,7 @@ export function About() {
           );
         }
 
-        // 7. Transition bridge reveal
+        // 8. Transition bridge reveal
         if (transitionRef.current) {
           gsap.fromTo(
             transitionRef.current,
@@ -167,15 +189,15 @@ export function About() {
       id="about"
       ref={sectionRef}
       aria-labelledby="about-heading"
-      className="relative w-full py-20 sm:py-28 md:py-36 px-4 sm:px-6 md:px-12 lg:px-16 bg-bg-primary border-t border-cool-border overflow-hidden select-none"
+      className="relative w-full py-20 sm:py-28 md:py-36 px-4 sm:px-6 md:px-12 lg:px-16 bg-[#050505] text-[#F4F2EE] border-t border-[#20272A] overflow-hidden select-none"
     >
-      {/* Background Architectural Subtle Line Highlights */}
+      {/* Subtle Background Architectural Grid Overlay */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-10 bg-[linear-gradient(to_right,rgba(244,242,238,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(244,242,238,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem]"
+        className="absolute inset-0 pointer-events-none opacity-[0.06] bg-[linear-gradient(to_right,rgba(244,242,238,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(244,242,238,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem]"
         aria-hidden="true"
       />
 
-      {/* Architectural Corner Markers */}
+      {/* Hairline Architectural Corner Indicators */}
       <div
         className="absolute top-6 left-6 text-[11px] font-mono text-white/15 pointer-events-none select-none"
         aria-hidden="true"
@@ -189,128 +211,142 @@ export function About() {
         +
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10 space-y-12 md:space-y-16">
-        {/* Editorial Section Header */}
+      <div className="max-w-7xl mx-auto relative z-10 space-y-16 md:space-y-24">
+        {/* ==================================================================== */}
+        {/* EDITORIAL SECTION HEADER BAR                                         */}
+        {/* ==================================================================== */}
         <div
           ref={headerRef}
-          className="flex items-center justify-between border-b border-cool-border pb-4"
+          className="flex items-center justify-between border-b border-[#20272A] pb-4"
         >
-          <div className="flex items-center gap-3">
-            <span className="font-mono text-xs text-accent tracking-widest uppercase">
+          <div className="flex items-center gap-3 font-mono text-xs">
+            <span className="text-[#FF174F] font-semibold tracking-widest uppercase">
               01
             </span>
-            <span className="font-mono text-xs text-text-muted tracking-widest uppercase">
-              / ABOUT
+            <span className="text-[#5F6264]">/</span>
+            <span className="text-[#929292] tracking-widest uppercase">
+              ABOUT ME
             </span>
           </div>
-          <span className="font-mono text-[11px] text-text-muted tracking-[0.2em] uppercase hidden sm:inline">
-            THE PERSON BEHIND THE WORK
-          </span>
+          <div className="flex items-center gap-4 font-mono text-[10px] sm:text-xs text-[#5F6264] tracking-[0.2em] uppercase">
+            <span className="hidden sm:inline">
+              FIRST-YEAR BSC AI &amp; DATA SCIENCE
+            </span>
+            <span className="hidden sm:inline">•</span>
+            <span className="text-[#929292]">PERSPECTIVE &amp; DRIVE</span>
+          </div>
         </div>
 
         {/* ==================================================================== */}
-        {/* DESKTOP EDITORIAL CINEMATIC COMPOSITION (lg:grid)                     */}
+        {/* DESKTOP EDITORIAL CINEMATIC HERO COMPOSITION (lg:block)              */}
         {/* ==================================================================== */}
-        <div className="hidden lg:block relative min-h-[640px] py-4">
+        <div className="hidden lg:block relative min-h-[600px] py-4">
           
-          {/* Central Portrait Visual Anchor */}
+          {/* Central Portrait Visual Anchor (Reusing /assets/portrait.jpg) */}
           <div className="flex justify-center items-center w-full">
             <div
               ref={portraitFrameRef}
-              className="relative w-[360px] xl:w-[400px] aspect-[3/4] group transition-transform duration-700 hover:scale-[1.005]"
+              className="relative w-[340px] xl:w-[380px] aspect-[3/4] group transition-transform duration-700 hover:scale-[1.005]"
               data-cursor="REVEAL"
             >
-              {/* Inner Image Container with Hairline Border */}
-              <div className="relative w-full h-full overflow-hidden border border-cool-border/80 bg-bg-surface">
+              {/* Hairline Container */}
+              <div className="relative w-full h-full overflow-hidden border border-white/10 bg-[#0D0F10] shadow-2xl">
                 <Image
-                  src="/images/portrait.svg"
-                  alt="Vincent Antony Editorial Portrait"
+                  src="/assets/portrait.jpg"
+                  alt="Vincent Antony — AI & Data Science Student"
                   fill
-                  sizes="(max-width: 1200px) 360px, 400px"
-                  className="object-cover object-center filter grayscale contrast-[1.06] brightness-95 opacity-95 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-out"
+                  sizes="(max-width: 1200px) 340px, 380px"
+                  className="object-cover object-center filter grayscale-[80%] contrast-[1.05] brightness-95 opacity-95 group-hover:grayscale-0 group-hover:opacity-100 group-hover:brightness-100 transition-all duration-700 ease-out"
                 />
 
-                {/* Restrained Gradient Overlay supporting contrast without muddying portrait features */}
-                <div className="absolute inset-0 bg-gradient-to-t from-bg-primary/80 via-transparent to-transparent opacity-65 pointer-events-none" />
+                {/* Restrained Contrast Gradient Vignette Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/85 via-transparent to-transparent opacity-75 pointer-events-none" />
 
-                {/* Editorial Specifier Tag */}
-                <div className="absolute top-3 left-3 bg-bg-primary/60 backdrop-blur-sm border border-cool-border/60 px-2 py-0.5">
-                  <span className="font-mono text-[9px] text-text-muted tracking-widest uppercase block">
-                    IMG.01 // SUBJECT
+                {/* Specifier Tag Top Left */}
+                <div className="absolute top-3 left-3 bg-[#050505]/75 backdrop-blur-sm border border-white/10 px-2 py-0.5 z-10">
+                  <span className="font-mono text-[9px] text-[#929292] tracking-widest uppercase block">
+                    IMG.01 // HERO ANCHOR
                   </span>
                 </div>
 
-                {/* Portrait Framing Metadata Footer */}
-                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs font-mono z-10">
-                  <span className="text-text-primary text-[11px] uppercase tracking-wider font-semibold drop-shadow-sm">
+                {/* Specifier Tag Top Right */}
+                <div className="absolute top-3 right-3 bg-[#050505]/75 backdrop-blur-sm border border-white/10 px-2 py-0.5 z-10">
+                  <span className="font-mono text-[9px] text-[#FF174F] tracking-widest uppercase block">
+                    BSC AI &amp; DS
+                  </span>
+                </div>
+
+                {/* Framing Metadata Footer */}
+                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between font-mono z-10 text-xs">
+                  <span className="text-[#F4F2EE] text-[11px] uppercase tracking-wider font-semibold">
                     {personalData.name}
                   </span>
-                  <span className="text-[9px] text-text-secondary uppercase tracking-widest drop-shadow-sm">
+                  <span className="text-[9px] text-[#929292] uppercase tracking-widest">
                     {personalData.contact.location}
                   </span>
                 </div>
               </div>
 
-              {/* Minimal Hairline Corner Accents */}
-              <div className="absolute -top-1 -left-1 w-2.5 h-2.5 border-t border-l border-white/20" />
-              <div className="absolute -top-1 -right-1 w-2.5 h-2.5 border-t border-r border-white/20" />
-              <div className="absolute -bottom-1 -left-1 w-2.5 h-2.5 border-b border-l border-white/20" />
-              <div className="absolute -bottom-1 -right-1 w-2.5 h-2.5 border-b border-r border-white/20" />
+              {/* Precise Architectural Corner Markers */}
+              <div className="absolute -top-1 -left-1 w-2.5 h-2.5 border-t border-l border-[#FF174F]/60" />
+              <div className="absolute -top-1 -right-1 w-2.5 h-2.5 border-t border-r border-[#FF174F]/60" />
+              <div className="absolute -bottom-1 -left-1 w-2.5 h-2.5 border-b border-l border-[#FF174F]/60" />
+              <div className="absolute -bottom-1 -right-1 w-2.5 h-2.5 border-b border-r border-[#FF174F]/60" />
             </div>
           </div>
 
-          {/* Top-Left Oversized Editorial Typography (Crosses Portrait Boundary Naturally) */}
+          {/* Top-Left Oversized Display Title (Crosses Image Boundary) */}
           <div
             ref={headlineTopRef}
-            className="absolute top-4 left-0 z-20 max-w-[520px] xl:max-w-[600px] pointer-events-none select-none"
+            className="absolute top-2 left-0 z-20 max-w-[500px] xl:max-w-[580px] pointer-events-none select-none"
           >
+            <span className="font-mono text-[10px] text-[#FF174F] tracking-[0.25em] uppercase block mb-2">
+              // FOUNDATIONAL DRIVERS
+            </span>
             <h2
               id="about-heading"
-              className="text-5xl xl:text-7xl font-display font-extrabold text-text-primary uppercase tracking-tight leading-[0.92]"
+              className="text-5xl xl:text-7xl font-display font-extrabold text-[#F4F2EE] uppercase tracking-tight leading-[0.92]"
             >
-              BUILDING WITH <br />
-              <span className="text-text-primary underline decoration-accent/60 decoration-1 underline-offset-8">
-                DATA &amp; CODE
-              </span>
+              EXPLORING THE <br />
+              <span className="text-[#F4F2EE] underline decoration-[#FF174F]/60 decoration-1 underline-offset-8">
+                FRONTIER OF
+              </span> <br />
+              <span className="text-[#FF174F]">AI &amp; DATA.</span>
             </h2>
           </div>
 
-          {/* Bottom-Right Oversized Editorial Typography (Crosses Portrait Boundary Naturally) */}
+          {/* Bottom-Right Oversized Display Subtitle */}
           <div
             ref={headlineBottomRef}
-            className="absolute bottom-14 right-0 z-20 max-w-[480px] xl:max-w-[560px] text-right pointer-events-none select-none"
+            className="absolute bottom-12 right-0 z-20 max-w-[460px] xl:max-w-[540px] text-right pointer-events-none select-none"
           >
-            <h3 className="text-4xl xl:text-6xl font-display font-extrabold text-text-primary/95 uppercase tracking-tight leading-[0.94]">
-              TURNING IDEAS INTO <br />
-              <span className="font-outline text-text-primary/80">
-                DIGITAL EXPERIENCES.
+            <h3 className="text-3xl xl:text-5xl font-display font-extrabold text-[#F4F2EE]/90 uppercase tracking-tight leading-[0.96]">
+              TRANSFORMING <br />
+              <span className="text-[#929292]">CURIOSITY INTO</span> <br />
+              <span className="text-[#F4F2EE] border-b border-[#20272A] pb-1">
+                ENGINEERING DEPTH.
               </span>
             </h3>
           </div>
 
-          {/* Mid-Right Subtle Architectural Indicator & Mono Statement */}
-          <div className="absolute top-8 right-0 flex items-center gap-2.5 font-mono text-[10px] text-text-muted tracking-[0.2em] uppercase">
-            <span className="w-1.5 h-1.5 bg-accent inline-block rounded-full" />
-            <span className="text-text-secondary">
-              BUILDING BEYOND AESTHETICS
+          {/* Mid-Right Monospace Indicator */}
+          <div className="absolute top-6 right-0 flex items-center gap-2.5 font-mono text-[10px] text-[#5F6264] tracking-[0.2em] uppercase">
+            <span className="w-1.5 h-1.5 bg-[#FF174F] inline-block rounded-full animate-pulse" />
+            <span className="text-[#929292]">
+              LEARNING BY BUILDING
             </span>
           </div>
 
-          {/* Bottom-Left Bio Paragraphs */}
+          {/* Bottom-Left Narrative Lead Paragraph */}
           <div
-            ref={bioRef}
-            className="absolute bottom-0 left-0 max-w-[400px] xl:max-w-[440px] space-y-4 text-left z-20"
+            ref={statementRef}
+            className="absolute bottom-0 left-0 max-w-[420px] xl:max-w-[460px] space-y-3 text-left z-20"
           >
-            <div className="inline-flex items-center gap-2 text-[10px] font-mono text-accent tracking-[0.2em] uppercase">
-              <span>01 // STATEMENT</span>
+            <div className="inline-flex items-center gap-2 text-[10px] font-mono text-[#FF174F] tracking-[0.2em] uppercase">
+              <span>01 // PERSPECTIVE</span>
             </div>
-
-            <p className="text-text-secondary font-body text-base leading-relaxed">
-              {personalData.bio.aboutBio}
-            </p>
-
-            <p className="text-xs font-mono text-text-muted leading-relaxed border-l border-cool-border pl-3">
-              Focused on understanding machine learning models, working with data pipelines, and building clean web interfaces.
+            <p className="text-[#929292] font-body text-sm xl:text-base leading-relaxed">
+              {personalData.bio.detailedBio}
             </p>
           </div>
         </div>
@@ -318,145 +354,227 @@ export function About() {
         {/* ==================================================================== */}
         {/* MOBILE & TABLET STACKED COMPOSITION (< lg:block)                     */}
         {/* ==================================================================== */}
-        <div className="block lg:hidden space-y-10">
-          
+        <div className="block lg:hidden space-y-8">
           {/* Portrait Anchor Mobile */}
           <div className="flex justify-center">
             <div
               ref={portraitFrameRef}
-              className="relative w-full max-w-[300px] sm:max-w-[340px] aspect-[3/4] group"
+              className="relative w-full max-w-[280px] sm:max-w-[320px] aspect-[3/4] group"
               data-cursor="REVEAL"
             >
-              <div className="relative w-full h-full overflow-hidden border border-cool-border bg-bg-surface">
+              <div className="relative w-full h-full overflow-hidden border border-white/10 bg-[#0D0F10]">
                 <Image
-                  src="/images/portrait.svg"
-                  alt="Vincent Antony Editorial Portrait"
+                  src="/assets/portrait.jpg"
+                  alt="Vincent Antony — AI & Data Science Student"
                   fill
-                  sizes="(max-width: 768px) 300px, 340px"
-                  className="object-cover object-center filter grayscale contrast-[1.06] opacity-95 group-hover:grayscale-0 transition-all duration-700"
+                  sizes="(max-width: 768px) 280px, 320px"
+                  className="object-cover object-center filter grayscale-[80%] contrast-[1.05] brightness-95 opacity-95 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-bg-primary/80 via-transparent to-transparent opacity-65 pointer-events-none" />
-                <div className="absolute top-2.5 left-2.5 bg-bg-primary/60 backdrop-blur-sm border border-cool-border/60 px-2 py-0.5">
-                  <span className="font-mono text-[9px] text-text-muted tracking-widest uppercase block">
-                    IMG.01 // SUBJECT
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/85 via-transparent to-transparent opacity-75 pointer-events-none" />
+                <div className="absolute top-2.5 left-2.5 bg-[#050505]/75 backdrop-blur-sm border border-white/10 px-2 py-0.5">
+                  <span className="font-mono text-[9px] text-[#929292] tracking-widest uppercase block">
+                    IMG.01 // HERO ANCHOR
                   </span>
                 </div>
-                <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between text-xs font-mono z-10">
-                  <span className="text-text-primary text-xs uppercase tracking-wider font-semibold">
+                <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between font-mono z-10 text-xs">
+                  <span className="text-[#F4F2EE] text-xs uppercase tracking-wider font-semibold">
                     {personalData.name}
                   </span>
-                  <span className="text-[9px] text-text-secondary uppercase tracking-widest">
+                  <span className="text-[9px] text-[#929292] uppercase tracking-widest">
                     {personalData.contact.location}
                   </span>
                 </div>
               </div>
-              <div className="absolute -top-1 -left-1 w-2.5 h-2.5 border-t border-l border-white/20" />
-              <div className="absolute -top-1 -right-1 w-2.5 h-2.5 border-t border-r border-white/20" />
-              <div className="absolute -bottom-1 -left-1 w-2.5 h-2.5 border-b border-l border-white/20" />
-              <div className="absolute -bottom-1 -right-1 w-2.5 h-2.5 border-b border-r border-white/20" />
+              <div className="absolute -top-1 -left-1 w-2.5 h-2.5 border-t border-l border-[#FF174F]/60" />
+              <div className="absolute -top-1 -right-1 w-2.5 h-2.5 border-t border-r border-[#FF174F]/60" />
+              <div className="absolute -bottom-1 -left-1 w-2.5 h-2.5 border-b border-l border-[#FF174F]/60" />
+              <div className="absolute -bottom-1 -right-1 w-2.5 h-2.5 border-b border-r border-[#FF174F]/60" />
             </div>
           </div>
 
           {/* Editorial Display Headlines Mobile */}
-          <div ref={headlineTopRef} className="space-y-4">
-            <div className="inline-flex items-center gap-2 text-[10px] font-mono text-accent tracking-[0.2em] uppercase">
-              <span>FOCUS // AI • DATA • TECHNOLOGY</span>
-            </div>
-
+          <div ref={headlineTopRef} className="space-y-3">
+            <span className="font-mono text-[10px] text-[#FF174F] tracking-[0.2em] uppercase block">
+              // FOUNDATIONAL DRIVERS
+            </span>
             <h2
               id="about-heading-mobile"
-              className="text-3xl sm:text-4xl font-display font-extrabold text-text-primary uppercase tracking-tight leading-[1.04]"
+              className="text-3xl sm:text-4xl font-display font-extrabold text-[#F4F2EE] uppercase tracking-tight leading-[1.02]"
             >
-              BUILDING WITH{" "}
-              <span className="text-text-primary underline decoration-accent/60 decoration-1 underline-offset-4">
-                DATA, CODE
+              EXPLORING THE{" "}
+              <span className="text-[#F4F2EE] underline decoration-[#FF174F]/60 decoration-1 underline-offset-4">
+                FRONTIER OF
               </span>{" "}
-              &amp; INTELLIGENCE.
+              <span className="text-[#FF174F]">AI &amp; DATA.</span>
             </h2>
-
-            <p className="text-xs sm:text-sm font-mono text-text-secondary tracking-wider uppercase font-medium border-l border-cool-border pl-3.5 py-0.5">
+            <p className="text-xs font-mono text-[#929292] tracking-wider uppercase border-l border-[#20272A] pl-3 py-1">
               "{personalData.bio.secondaryStatement}"
             </p>
           </div>
 
-          {/* Bio Text Mobile */}
-          <div ref={bioRef} className="space-y-3 text-text-secondary font-body text-base leading-relaxed">
-            <p>{personalData.bio.aboutBio}</p>
-            <p className="text-xs font-mono text-text-muted leading-relaxed">
-              Focused on understanding machine learning models, working with data pipelines, and building clean web interfaces.
-            </p>
+          {/* Statement Mobile */}
+          <div ref={statementRef} className="space-y-3 text-[#929292] font-body text-sm sm:text-base leading-relaxed">
+            <p>{personalData.bio.detailedBio}</p>
           </div>
         </div>
 
         {/* ==================================================================== */}
-        {/* EDITORIAL METADATA INFORMATION BLOCKS (Hairline Divider Style)        */}
+        {/* 6 CORE THEMATIC PILLARS GRID (CURIOSITY, POTENTIAL, CREATIVITY, ETC) */}
+        {/* ==================================================================== */}
+        <div className="space-y-6 pt-8 border-t border-[#20272A]">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <span className="font-mono text-[10px] text-[#FF174F] tracking-[0.25em] uppercase block">
+                02 // CORE DRIVERS
+              </span>
+              <h3 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F4F2EE]">
+                CURIOSITY, POTENTIAL &amp; EXPERIMENTATION
+              </h3>
+            </div>
+            <span className="font-mono text-[10px] text-[#5F6264] tracking-widest uppercase">
+              [ HOVER TO EXPLORE DRIVERS ]
+            </span>
+          </div>
+
+          <div
+            ref={pillarsRef}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 font-mono"
+          >
+            {personalData.pillars.map((pillar, index) => {
+              const isActive = activePillar === index;
+              return (
+                <div
+                  key={pillar.number}
+                  onMouseEnter={() => setActivePillar(index)}
+                  onMouseLeave={() => setActivePillar(null)}
+                  className={`relative p-5 sm:p-6 border transition-all duration-500 ease-out cursor-default group ${
+                    isActive
+                      ? "border-[#FF174F]/60 bg-[#0D0F10] shadow-[0_0_25px_rgba(255,23,79,0.06)]"
+                      : "border-[#20272A] bg-[#050505] hover:border-white/20 hover:bg-[#0D0F10]/50"
+                  }`}
+                >
+                  {/* Card Header Tag & Number */}
+                  <div className="flex items-center justify-between mb-4 border-b border-[#20272A] pb-3">
+                    <span className="text-[10px] text-[#FF174F] tracking-widest uppercase font-semibold">
+                      {pillar.tag}
+                    </span>
+                    <span
+                      className={`text-xs tracking-wider transition-colors duration-300 ${
+                        isActive ? "text-[#FF174F]" : "text-[#5F6264] group-hover:text-[#929292]"
+                      }`}
+                    >
+                      {pillar.number}
+                    </span>
+                  </div>
+
+                  {/* Title */}
+                  <h4 className="font-display text-lg sm:text-xl font-bold text-[#F4F2EE] tracking-tight uppercase mb-2 group-hover:text-white transition-colors">
+                    {pillar.title}
+                  </h4>
+
+                  {/* Description */}
+                  <p className="font-body text-xs sm:text-sm text-[#929292] leading-relaxed">
+                    {pillar.description}
+                  </p>
+
+                  {/* Hairline Active Indicator Bar */}
+                  <div
+                    className={`absolute bottom-0 left-0 right-0 h-[2px] bg-[#FF174F] transition-all duration-500 ${
+                      isActive ? "w-full opacity-100" : "w-0 opacity-0"
+                    }`}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* ==================================================================== */}
+        {/* ACADEMIC & TECHNICAL SPECIFICATION PANEL                            */}
         {/* ==================================================================== */}
         <div
           ref={metadataRef}
-          className="pt-10 border-t border-cool-border grid grid-cols-1 sm:grid-cols-3 gap-8 font-mono text-xs"
+          className="pt-10 border-t border-[#20272A] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 font-mono text-xs"
         >
-          {/* Metadata Item 1: Degree */}
-          <div className="space-y-1.5 border-b sm:border-b-0 sm:border-r border-cool-border/60 pb-6 sm:pb-0 sm:pr-8">
-            <span className="text-[10px] text-accent tracking-widest uppercase block">
-              01 / DEGREE
+          {/* Metadata Block 1: Academic Focus */}
+          <div className="space-y-2 border-b sm:border-b-0 sm:border-r border-[#20272A] pb-6 sm:pb-0 sm:pr-6">
+            <span className="text-[10px] text-[#FF174F] tracking-widest uppercase block">
+              01 / ACADEMIC STATUS
             </span>
-            <span className="text-text-primary text-sm font-display font-semibold block uppercase tracking-wide">
-              BSc AI &amp; Data Science
+            <span className="text-[#F4F2EE] text-sm font-display font-semibold block uppercase tracking-wide">
+              {personalData.academic.degree}
             </span>
-            <span className="text-[10px] text-text-muted block tracking-wider">
-              Student &amp; Practitioner
-            </span>
-          </div>
-
-          {/* Metadata Item 2: Location */}
-          <div className="space-y-1.5 border-b sm:border-b-0 sm:border-r border-cool-border/60 pb-6 sm:pb-0 sm:pr-8">
-            <span className="text-[10px] text-accent tracking-widest uppercase block">
-              02 / LOCATION
-            </span>
-            <span className="text-text-primary text-sm font-display font-semibold block uppercase tracking-wide">
-              {personalData.contact.location}
-            </span>
-            <span className="text-[10px] text-text-muted block tracking-wider">
-              India
+            <span className="text-[10px] text-[#929292] block tracking-wider">
+              {personalData.academic.status} ({personalData.academic.year})
             </span>
           </div>
 
-          {/* Metadata Item 3: Methodology */}
-          <div className="space-y-1.5">
-            <span className="text-[10px] text-accent tracking-widest uppercase block">
+          {/* Metadata Block 2: Core Focus Areas */}
+          <div className="space-y-2 border-b lg:border-b-0 lg:border-r border-[#20272A] pb-6 sm:pb-0 sm:pr-6">
+            <span className="text-[10px] text-[#FF174F] tracking-widest uppercase block">
+              02 / PRIMARY FOCUS
+            </span>
+            <span className="text-[#F4F2EE] text-sm font-display font-semibold block uppercase tracking-wide">
+              AI &amp; WEB ARCHITECTURE
+            </span>
+            <span className="text-[10px] text-[#929292] block tracking-wider">
+              ML Models • Web Interfaces • Data Pipelines
+            </span>
+          </div>
+
+          {/* Metadata Block 3: Mindset */}
+          <div className="space-y-2 border-b sm:border-b-0 sm:border-r border-[#20272A] pb-6 sm:pb-0 sm:pr-6">
+            <span className="text-[10px] text-[#FF174F] tracking-widest uppercase block">
               03 / METHODOLOGY
             </span>
-            <span className="text-text-primary text-sm font-display font-semibold block uppercase tracking-wide">
-              Build &amp; Learn
+            <span className="text-[#F4F2EE] text-sm font-display font-semibold block uppercase tracking-wide">
+              BUILD &amp; ITERATE
             </span>
-            <span className="text-[10px] text-text-muted block tracking-wider">
-              Project-driven growth
+            <span className="text-[10px] text-[#929292] block tracking-wider">
+              Project-Driven Growth &amp; Rigor
+            </span>
+          </div>
+
+          {/* Metadata Block 4: Location & Status */}
+          <div className="space-y-2">
+            <span className="text-[10px] text-[#FF174F] tracking-widest uppercase block">
+              04 / LOCATION
+            </span>
+            <span className="text-[#F4F2EE] text-sm font-display font-semibold block uppercase tracking-wide">
+              {personalData.contact.location}
+            </span>
+            <span className="text-[10px] text-[#929292] block tracking-wider flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block" />
+              Open to Collaborative Projects
             </span>
           </div>
         </div>
 
-        {/* Visual Connection Transition (About -> Skills) */}
+        {/* ==================================================================== */}
+        {/* VISUAL BRIDGE TRANSITION (ABOUT -> SKILLS / WORKS)                    */}
+        {/* ==================================================================== */}
         <div
           ref={transitionRef}
-          className="pt-12 sm:pt-16 border-t border-cool-border flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-text-muted uppercase tracking-widest"
+          className="pt-12 border-t border-[#20272A] flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-[#5F6264] uppercase tracking-widest"
         >
           <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-            <span>01 / IDENTITY</span>
+            <span className="w-1.5 h-1.5 rounded-full bg-[#FF174F]" />
+            <span className="text-[#929292]">01 / IDENTITY (ABOUT)</span>
           </div>
 
-          <div className="hidden sm:flex items-center gap-4 text-[10px] text-text-muted">
-            <span className="h-[1px] w-12 bg-cool-border" />
-            <span className="text-accent/80">IDENTITY → CAPABILITY</span>
-            <span className="h-[1px] w-12 bg-cool-border" />
+          <div className="hidden sm:flex items-center gap-4 text-[10px]">
+            <span className="h-[1px] w-16 bg-[#20272A]" />
+            <span className="text-[#FF174F]/80 font-semibold tracking-[0.25em]">
+              SEAMLESS FLOW → CAPABILITY
+            </span>
+            <span className="h-[1px] w-16 bg-[#20272A]" />
           </div>
 
           <div className="flex items-center gap-2">
-            <span>02 / CAPABILITY</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-cool-surface" />
+            <span className="text-[#5F6264]">02 / CAPABILITY (NEXT)</span>
+            <span className="w-1.5 h-1.5 rounded-full bg-[#20272A]" />
           </div>
         </div>
-
       </div>
     </section>
   );

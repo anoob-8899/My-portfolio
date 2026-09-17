@@ -14,9 +14,8 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { id: "about", number: "01", label: "ABOUT", href: "#about" },
-  { id: "skills", number: "02", label: "SKILLS", href: "#skills" },
-  { id: "work", number: "03", label: "WORK", href: "#work" },
-  { id: "contact", number: "04", label: "CONTACT", href: "#contact" },
+  { id: "works", number: "02", label: "WORKS", href: "#works" },
+  { id: "contact", number: "03", label: "CONTACT", href: "#contact" },
 ];
 
 export function Header() {
