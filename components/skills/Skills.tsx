@@ -73,9 +73,6 @@ export function Skills() {
       aria-labelledby="skills-heading"
       className="relative w-full py-24 sm:py-32 md:py-40 px-4 sm:px-6 md:px-12 lg:px-16 bg-bg-primary border-t border-cool-border overflow-hidden select-none"
     >
-      {/* Subtle Background Accent Illumination */}
-      <div className="absolute top-1/3 right-1/4 w-[350px] h-[350px] rounded-full bg-accent/5 blur-[120px] pointer-events-none" />
-
       <div className="max-w-7xl mx-auto relative z-10 space-y-16 md:space-y-20">
         
         {/* Editorial Section Header */}
@@ -173,7 +170,7 @@ export function Skills() {
                           {item.name}
                         </span>
                         {isHovered && (
-                          <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
                         )}
                       </div>
                       <p className="font-mono text-[11px] text-text-secondary">

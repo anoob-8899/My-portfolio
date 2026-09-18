@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Syne, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { CustomCursor } from "@/components/ui/CustomCursor";
-import { Header } from "@/components/navigation/Header";
 
 const syne = Syne({
   subsets: ["latin"],
@@ -66,9 +65,6 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-
-        {/* Global Header Navigation */}
-        <Header />
 
         {/* Ambient Overlay */}
         <div className="grain-overlay pointer-events-none fixed inset-0 z-50 opacity-20" aria-hidden="true" />

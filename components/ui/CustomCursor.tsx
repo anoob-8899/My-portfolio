@@ -85,7 +85,7 @@ export function CustomCursor() {
           opacity: isVisible ? 1 : 0,
         }}
       >
-        <div className="relative -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 bg-accent rounded-full" />
+        <div className="relative -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 bg-white rounded-full shadow-[0_0_6px_rgba(255,255,255,0.8)]" />
       </div>
 
       {/* Outer Magnetic / Trailing Ring */}
@@ -100,12 +100,12 @@ export function CustomCursor() {
         <div
           className={`relative -translate-x-1/2 -translate-y-1/2 rounded-full transition-all duration-300 ease-out flex items-center justify-center ${
             isPointer
-              ? "w-10 h-10 border border-accent/80 bg-accent/10"
+              ? "w-10 h-10 border border-white/60 bg-white/10"
               : "w-6 h-6 border border-white/20 bg-transparent"
           }`}
         >
           {cursorText && (
-            <span className="text-[8px] uppercase font-mono tracking-widest text-accent font-semibold">
+            <span className="text-[8px] uppercase font-mono tracking-widest text-white font-semibold">
               {cursorText}
             </span>
           )}

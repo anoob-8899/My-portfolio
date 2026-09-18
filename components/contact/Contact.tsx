@@ -143,7 +143,6 @@ export function Contact() {
           className="flex items-center justify-between border-b border-white/12 pb-5"
         >
           <div className="flex items-center gap-3">
-            <span className="w-2 h-2 rounded-full bg-[#FF174F] shadow-[0_0_8px_rgba(255,23,79,0.8)]" />
             <span className="font-mono text-xs text-[#FF174F] tracking-widest uppercase font-bold">
               03
             </span>

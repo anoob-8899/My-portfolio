@@ -28,7 +28,6 @@ export function ProjectMetadata() {
         {/* Left Column: Description & Objective */}
         <div className="lg:col-span-5 space-y-4">
           <div className="flex items-center gap-2 font-mono text-[10px] text-[#FF174F] tracking-[0.25em] uppercase">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#FF174F]" />
             <span>PROJECT OVERVIEW</span>
           </div>
 

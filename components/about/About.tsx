@@ -331,7 +331,6 @@ export function About() {
 
           {/* Mid-Right Monospace Indicator */}
           <div className="absolute top-6 right-0 flex items-center gap-2.5 font-mono text-[10px] text-[#5F6264] tracking-[0.2em] uppercase">
-            <span className="w-1.5 h-1.5 bg-[#FF174F] inline-block rounded-full animate-pulse" />
             <span className="text-[#929292]">
               LEARNING BY BUILDING
             </span>
@@ -558,7 +557,7 @@ export function About() {
           className="pt-12 border-t border-[#20272A] flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-[#5F6264] uppercase tracking-widest"
         >
           <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#FF174F]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#929292]" />
             <span className="text-[#929292]">01 / IDENTITY (ABOUT)</span>
           </div>
 

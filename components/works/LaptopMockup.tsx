@@ -204,7 +204,6 @@ export function LaptopMockup({ videoSrc, screenshots, altText }: LaptopMockupPro
 
             {/* Bottom Screen Live Status Bar Tag */}
             <div className="absolute bottom-2.5 left-3 z-30 pointer-events-none hidden sm:flex items-center gap-2 bg-[#050505]/80 backdrop-blur-sm px-2.5 py-1 rounded border border-white/10 font-mono text-[9px] text-[#929292] tracking-wider uppercase">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#FF174F]" />
               <span>COLLEGE DEPARTMENT PORTAL // LIVE PREVIEW</span>
             </div>
 

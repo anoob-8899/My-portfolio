@@ -259,7 +259,7 @@ export function CaseStudyView({ project }: CaseStudyViewProps) {
             {/* Window / Mockup Header Bar */}
             <div className="flex items-center justify-between px-3 py-2 bg-[#080A0B] rounded-t-md border-b border-cool-border/40 mb-2">
               <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#FF174F]/80" />
+                <span className="w-2.5 h-2.5 rounded-full bg-white/20" />
                 <span className="w-2.5 h-2.5 rounded-full bg-[#5F6264]/40" />
                 <span className="w-2.5 h-2.5 rounded-full bg-[#20272A]" />
               </div>

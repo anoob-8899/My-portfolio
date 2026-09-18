@@ -70,7 +70,7 @@ export function Header() {
           className="group flex items-center gap-3 font-display tracking-widest text-text-primary text-sm md:text-base font-bold uppercase transition-colors"
           data-cursor="HOME"
         >
-          <span className="w-2.5 h-2.5 rounded-full bg-accent group-hover:scale-125 transition-transform duration-300 shadow-[0_0_8px_rgba(255,23,79,0.8)]" />
+          <span className="w-2.5 h-2.5 rounded-full bg-white group-hover:scale-125 transition-transform duration-300 shadow-[0_0_8px_rgba(255,255,255,0.4)]" />
           <span className="hidden md:inline">{personalData.name}</span>
           <span className="inline md:hidden">{personalData.shortName}</span>
         </Link>
@@ -100,7 +100,7 @@ export function Header() {
                 <span>{item.label}</span>
                 {isActive && (
                   <span
-                    className="absolute -bottom-1 left-0 right-0 h-[2px] bg-accent rounded-full shadow-[0_0_8px_rgba(255,23,79,0.8)] transition-all duration-300"
+                    className="absolute -bottom-1 left-0 right-0 h-[2px] bg-white rounded-full shadow-[0_0_8px_rgba(255,255,255,0.4)] transition-all duration-300"
                   />
                 )}
               </a>
