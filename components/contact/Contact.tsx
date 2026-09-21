@@ -127,7 +127,7 @@ export function Contact() {
         className="absolute top-6 left-6 text-[10px] font-mono text-white/20 pointer-events-none select-none"
         aria-hidden="true"
       >
-        + 03/CONTACT
+        +
       </div>
       <div
         className="absolute top-6 right-6 text-[10px] font-mono text-white/20 pointer-events-none select-none"
@@ -137,19 +137,11 @@ export function Contact() {
       </div>
 
       <div className="max-w-7xl mx-auto w-full relative z-10 space-y-12 sm:space-y-16 my-auto">
-        {/* 1. SECTION IDENTIFIER: 03 / CONTACT */}
+        {/* 1. SECTION IDENTIFIER */}
         <div
           ref={headerRef}
-          className="flex items-center justify-between border-b border-white/12 pb-5"
+          className="flex items-center justify-end border-b border-white/12 pb-5"
         >
-          <div className="flex items-center gap-3">
-            <span className="font-mono text-xs text-accent tracking-widest uppercase font-bold">
-              03
-            </span>
-            <span className="font-mono text-xs text-[#929292] tracking-widest uppercase">
-              / CONTACT
-            </span>
-          </div>
           <div className="flex items-center gap-2 text-[#929292] font-mono text-[11px] tracking-widest uppercase">
             <MapPin className="w-3 h-3 text-accent" />
             <span>{personalData.contact.location}</span>

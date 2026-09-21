@@ -37,19 +37,7 @@ export function SideNavigation() {
 
   return (
     <>
-      {/* Top-Left Brand Anchor (Way back to Home on all pages, no dot, no menu bar) */}
-      <div className="fixed top-6 left-6 md:left-12 lg:left-16 z-40 pointer-events-auto">
-        <Link
-          href="/"
-          className="group flex items-center gap-2 font-display tracking-widest text-text-primary text-xs md:text-sm font-bold uppercase transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent"
-          data-cursor="HOME"
-          aria-label="Return to home page"
-        >
-          <span className="group-hover:text-accent transition-colors">
-            VINCENT ANTONY
-          </span>
-        </Link>
-      </div>
+
 
       {/* Desktop Vertical Toolbar */}
       <aside

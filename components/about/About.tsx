@@ -193,30 +193,7 @@ export function About() {
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10 space-y-16 md:space-y-24">
-        {/* ==================================================================== */}
-        {/* EDITORIAL SECTION HEADER BAR                                         */}
-        {/* ==================================================================== */}
-        <div
-          ref={headerRef}
-          className="flex items-center justify-between border-b border-[#20272A] pb-4"
-        >
-          <div className="flex items-center gap-3 font-mono text-xs">
-            <span className="text-accent font-semibold tracking-widest uppercase">
-              01
-            </span>
-            <span className="text-[#5F6264]">/</span>
-            <span className="text-[#929292] tracking-widest uppercase">
-              ABOUT ME
-            </span>
-          </div>
-          <div className="flex items-center gap-4 font-mono text-[10px] sm:text-xs text-[#5F6264] tracking-[0.2em] uppercase">
-            <span className="hidden sm:inline">
-              FIRST-YEAR BSC AI &amp; DATA SCIENCE
-            </span>
-            <span className="hidden sm:inline">/</span>
-            <span className="text-[#929292]">PERSPECTIVE &amp; DRIVE</span>
-          </div>
-        </div>
+
 
         {/* ==================================================================== */}
         {/* DESKTOP EDITORIAL CINEMATIC HERO COMPOSITION (lg:block)              */}

@@ -92,17 +92,8 @@ export function Works() {
         {/* EDITORIAL SECTION HEADER BAR WITH SWITCHER */}
         <div
           ref={headerRef}
-          className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#20272A] pb-4"
+          className="flex flex-col sm:flex-row sm:items-center justify-end gap-4 border-b border-[#20272A] pb-4"
         >
-          <div className="flex items-center gap-3 font-mono text-xs">
-            <span className="text-accent font-semibold tracking-widest uppercase">
-              02
-            </span>
-            <span className="text-[#5F6264]">/</span>
-            <span className="text-[#929292] tracking-widest uppercase">
-              WORKS
-            </span>
-          </div>
 
           {/* PROJECT SWITCHER CONTROLS (Cyan accent, 01 / 02 counter, no dots) */}
           <div className="flex items-center gap-4 font-mono text-xs">
