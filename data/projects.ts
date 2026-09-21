@@ -1,3 +1,8 @@
+export interface ProjectFeature {
+  title: string;
+  description: string;
+}
+
 export interface CaseStudySection {
   title: string;
   content: string;
@@ -8,15 +13,21 @@ export interface Project {
   id: string;
   number: string;
   title: string;
+  tagline?: string;
+  headline?: string;
   shortDescription?: string;
   year?: string;
+  status?: string;
   role?: string;
   technologies?: string[];
   thumbnail?: string; // Screen mockup preview SVG or image path
+  videoSrc?: string;
+  posterSrc?: string;
   slug: string;
   liveUrl?: string;
   repositoryUrl?: string;
   isComingSoon?: boolean;
+  features?: ProjectFeature[];
   caseStudy?: {
     overview?: string;
     problem?: string;
@@ -53,8 +64,52 @@ export const projectsData: Project[] = [
     }
   },
   {
-    id: "project-02-placeholder",
+    id: "reemas-studio",
     number: "02",
+    title: "REEMAS STUDIO",
+    tagline: "Cinematic visual narratives & editorial photography",
+    headline: "A CINEMATIC PORTFOLIO WEBSITE FOR A PHOTOGRAPHY STUDIO.",
+    shortDescription: "A portfolio website for an independent photography studio based in Changanassery, Kerala.",
+    year: "2026",
+    status: "Completed",
+    role: "Designer & Developer",
+    technologies: ["Next.js", "React", "Vercel", "Cloudinary"],
+    videoSrc: "/videos/reemas-studio.mp4",
+    posterSrc: "/images/reemas-studio-poster.jpg",
+    slug: "reemas-studio",
+    liveUrl: "https://reemas-studio.vercel.app/",
+    isComingSoon: false,
+    features: [
+      {
+        title: "Cinematic Hero",
+        description: "full-screen hero image with a clear call to action to explore the work."
+      },
+      {
+        title: "Curated Project Galleries",
+        description: "separate galleries for Fashion, Portraits, Weddings and Events."
+      },
+      {
+        title: "Optimized Image Delivery",
+        description: "images served through Cloudinary with automatic format and quality."
+      },
+      {
+        title: "Studio Story & Inquiry Flow",
+        description: "an About page with the photographer's philosophy, linked to a contact page for commissions."
+      }
+    ],
+    caseStudy: {
+      overview: "A portfolio website for an independent photography studio based in Changanassery, Kerala. It presents editorial, portrait, wedding and event work through a cinematic full-screen hero, category-based project galleries, an About page and a contact page for worldwide commissions.",
+      problem: "Presenting diverse visual media with high visual fidelity while maintaining high performance and smooth responsive flows.",
+      approach: "Built with Next.js and Cloudinary image management to deliver full-screen cinematic visual narratives.",
+      development: "Developed modern gallery layouts, fluid animations, and lightweight mobile media delivery.",
+      technologies: ["Next.js", "React", "Vercel", "Cloudinary"],
+      result: "A sleek, immersive editorial photography portfolio.",
+      learnings: "Optimized media compression and progressive web presentation for high-res photography."
+    }
+  },
+  {
+    id: "project-02-placeholder",
+    number: "03",
     title: "AI & VISION EXPLORATIONS",
     shortDescription: "Project details and case study coming soon.",
     year: "2024",
@@ -66,7 +121,7 @@ export const projectsData: Project[] = [
   },
   {
     id: "project-03-placeholder",
-    number: "03",
+    number: "04",
     title: "DATA ANALYTICS WORKSPACE",
     shortDescription: "Project details and case study coming soon.",
     year: "2024",

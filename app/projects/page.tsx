@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <div className="w-full min-h-screen pt-12 md:pt-16 pb-24 md:pb-32">
+    <div className="w-full h-screen overflow-hidden pt-12 md:pt-16 pb-12">
       <Works />
     </div>
   );
