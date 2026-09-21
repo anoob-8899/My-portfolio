@@ -5,14 +5,13 @@ import { motion } from "framer-motion";
 import { HeroPortrait } from "./HeroPortrait";
 import { HeroTypography } from "./HeroTypography";
 import { HeroMetadata } from "./HeroMetadata";
-import { SideNavigation } from "../navigation/SideNavigation";
 
 export function Hero() {
   return (
     <section
       id="hero"
       aria-label="Hero Section"
-      className="relative w-full min-h-[100svh] h-[100svh] flex flex-col justify-between bg-[#050505] text-[#F5F5F5] overflow-hidden px-6 py-6 md:py-8 lg:px-16"
+      className="relative w-full min-h-[100svh] h-[100svh] max-h-[100svh] flex flex-col justify-between bg-[#050505] text-[#F5F5F5] overflow-hidden px-6 py-6 md:py-8 lg:px-16 select-none"
     >
       {/* Background Ambient Grid Layer */}
       <motion.div
@@ -28,27 +27,13 @@ export function Hero() {
       {/* Main Composition Container */}
       <div className="relative z-10 w-full max-w-7xl mx-auto h-full flex flex-col justify-between">
         
-        {/* Top Header / Academic Metadata Bar */}
-        <div className="w-full flex justify-between items-start pt-2 md:pt-6">
+        {/* Top Academic Metadata Bar (No top navigation bar) */}
+        <div className="w-full flex justify-between items-start pt-2 md:pt-4">
           <HeroMetadata />
-
-          {/* Mobile Quick Nav */}
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="md:hidden font-mono text-[10px] tracking-widest text-[#929292] uppercase flex items-center space-x-3 pt-1"
-          >
-            <a href="#about" className="hover:text-[#FF174F] transition-colors">01 ABOUT</a>
-            <span>/</span>
-            <a href="#works" className="hover:text-[#FF174F] transition-colors">02 WORKS</a>
-            <span>/</span>
-            <a href="#contact" className="hover:text-[#FF174F] transition-colors">03 CONTACT</a>
-          </motion.div>
         </div>
 
         {/* Central Content: Portrait & Typography */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center my-auto py-4">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center my-auto py-2">
           
           {/* Portrait Anchor */}
           <div className="lg:col-span-6 flex justify-center order-1 lg:order-2">
@@ -74,15 +59,11 @@ export function Hero() {
           </div>
 
           <div className="hidden sm:block text-[#929292]">
-            CLICK PORTRAIT OR NAV TO EXPLORE
+            CLICK PORTRAIT OR TOOLBAR TO NAVIGATE
           </div>
         </motion.div>
 
       </div>
-
-      {/* Right-Side Vertical Navigation */}
-      <SideNavigation />
     </section>
   );
 }
-

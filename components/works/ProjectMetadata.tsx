@@ -27,7 +27,7 @@ export function ProjectMetadata() {
         
         {/* Left Column: Description & Objective */}
         <div className="lg:col-span-5 space-y-4">
-          <div className="flex items-center gap-2 font-mono text-[10px] text-[#FF174F] tracking-[0.25em] uppercase">
+          <div className="flex items-center gap-2 font-mono text-[10px] text-accent tracking-[0.25em] uppercase">
             <span>PROJECT OVERVIEW</span>
           </div>
 
@@ -43,7 +43,7 @@ export function ProjectMetadata() {
         {/* Right Column: Problem Solved / Key Student Benefits */}
         <div className="lg:col-span-7 space-y-4">
           <div className="flex items-center justify-between border-b border-[#20272A] pb-3">
-            <span className="font-mono text-[10px] text-[#FF174F] tracking-[0.25em] uppercase">
+            <span className="font-mono text-[10px] text-accent tracking-[0.25em] uppercase">
               STUDENT SOLUTIONS &amp; FEATURES
             </span>
             <span className="font-mono text-[10px] text-[#5F6264] tracking-widest uppercase">
@@ -58,7 +58,7 @@ export function ProjectMetadata() {
                 className="p-4 sm:p-5 border border-[#20272A] bg-[#050505] hover:border-white/20 transition-colors duration-300 group"
               >
                 <div className="flex items-center justify-between mb-2 font-mono text-xs">
-                  <span className="text-[#FF174F] font-semibold tracking-wider">
+                  <span className="text-accent font-semibold tracking-wider">
                     {item.number}
                   </span>
                   <span className="text-[#5F6264] text-[10px] tracking-widest uppercase group-hover:text-[#929292] transition-colors">
@@ -80,7 +80,7 @@ export function ProjectMetadata() {
         
         {/* Spec 1: Year */}
         <div className="space-y-1.5 border-b sm:border-b-0 sm:border-r border-[#20272A] pb-4 sm:pb-0 sm:pr-6">
-          <span className="text-[10px] text-[#FF174F] tracking-widest uppercase block">
+          <span className="text-[10px] text-accent tracking-widest uppercase block">
             YEAR
           </span>
           <span className="text-[#F5F5F5] text-base font-display font-semibold block tracking-wider">
@@ -90,7 +90,7 @@ export function ProjectMetadata() {
 
         {/* Spec 2: Status */}
         <div className="space-y-1.5 border-b lg:border-b-0 lg:border-r border-[#20272A] pb-4 sm:pb-0 sm:pr-6">
-          <span className="text-[10px] text-[#FF174F] tracking-widest uppercase block">
+          <span className="text-[10px] text-accent tracking-widest uppercase block">
             STATUS
           </span>
           <div className="flex items-center gap-2">
@@ -103,14 +103,14 @@ export function ProjectMetadata() {
 
         {/* Spec 3: Technologies */}
         <div className="space-y-1.5 border-b sm:border-b-0 sm:border-r border-[#20272A] pb-4 sm:pb-0 sm:pr-6">
-          <span className="text-[10px] text-[#FF174F] tracking-widest uppercase block">
+          <span className="text-[10px] text-accent tracking-widest uppercase block">
             TECHNOLOGIES
           </span>
           <div className="flex flex-wrap gap-x-2 gap-y-1 text-[#F5F5F5] text-xs font-semibold tracking-wider">
             {TECHNOLOGIES.map((tech, idx) => (
               <span key={tech}>
                 {tech}
-                {idx < TECHNOLOGIES.length - 1 && <span className="text-[#5F6264] ml-2">•</span>}
+                {idx < TECHNOLOGIES.length - 1 && <span className="text-[#5F6264] ml-2">/</span>}
               </span>
             ))}
           </div>
@@ -118,7 +118,7 @@ export function ProjectMetadata() {
 
         {/* Spec 4: Editorial Actions / Links */}
         <div className="space-y-3 pt-1 sm:pt-0">
-          <span className="text-[10px] text-[#FF174F] tracking-widest uppercase block">
+          <span className="text-[10px] text-accent tracking-widest uppercase block">
             PROJECT LINKS
           </span>
 
@@ -128,12 +128,12 @@ export function ProjectMetadata() {
               href="https://monday-website-kohl.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center justify-between font-mono text-xs font-medium tracking-wider text-[#F5F5F5] hover:text-[#FF174F] border-b border-white/10 hover:border-[#FF174F] pb-1 transition-colors duration-300"
+              className="group inline-flex items-center justify-between font-mono text-xs font-medium tracking-wider text-[#F5F5F5] hover:text-accent border-b border-white/10 hover:border-accent pb-1 transition-colors duration-300"
             >
               <span className="flex items-center gap-2">
                 <span>LIVE WEBSITE</span>
               </span>
-              <ExternalLink className="w-3.5 h-3.5 text-[#FF174F] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+              <ExternalLink className="w-3.5 h-3.5 text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
             </a>
 
             {/* GitHub Link */}

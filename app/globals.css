@@ -9,7 +9,9 @@
   --text-primary: #F5F5F5;
   --text-secondary: #929292;
   --text-muted: #5F6264;
-  --accent-magenta: #FF174F;
+  --accent: #00E5FF;
+  --accent-glow: rgba(0, 229, 255, 0.3);
+  --accent-subtle: rgba(0, 229, 255, 0.12);
   --cool-surface: #20272A;
   --cool-border: rgba(255, 255, 255, 0.12);
 }
@@ -33,8 +35,8 @@ body {
 
 /* Custom Text Selection */
 ::selection {
-  background-color: var(--accent-magenta);
-  color: #ffffff;
+  background-color: var(--accent);
+  color: #050505;
 }
 
 /* Custom Minimal Scrollbar */
@@ -49,7 +51,7 @@ body {
   border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-magenta);
+  background: var(--accent);
 }
 
 /* Global Grain Overlay (3.5% opacity for tactile film texture) */
@@ -67,7 +69,7 @@ body {
 
 /* Focus Visible Accessibility */
 *:focus-visible {
-  outline: 2px solid var(--accent-magenta);
+  outline: 2px solid var(--accent);
   outline-offset: 4px;
 }
 
@@ -146,7 +148,7 @@ body {
     @apply inline-flex items-center justify-center gap-3 px-8 py-4 border border-white/10 text-text-primary bg-bg-secondary font-display font-medium text-sm tracking-wide rounded-none transition-all duration-300 ease-out hover:border-white/30 hover:bg-cool-surface/40 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none;
   }
 
-  /* Ghost Text Link with Kinetic Underline Reveal in Accent Magenta */
+  /* Ghost Text Link with Kinetic Underline Reveal in Accent Cyan */
   .btn-ghost {
     @apply relative inline-flex items-center gap-2 font-display text-sm tracking-wide text-text-primary transition-colors duration-300 hover:text-white py-1;
   }

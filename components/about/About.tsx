@@ -19,7 +19,6 @@ export function About() {
   const statementRef = useRef<HTMLDivElement>(null);
   const pillarsRef = useRef<HTMLDivElement>(null);
   const metadataRef = useRef<HTMLDivElement>(null);
-  const transitionRef = useRef<HTMLDivElement>(null);
 
   const [activePillar, setActivePillar] = useState<number | null>(null);
 
@@ -160,24 +159,6 @@ export function About() {
             }
           );
         }
-
-        // 8. Transition bridge reveal
-        if (transitionRef.current) {
-          gsap.fromTo(
-            transitionRef.current,
-            { opacity: 0, scaleX: 0.96 },
-            {
-              opacity: 1,
-              scaleX: 1,
-              duration: 0.9,
-              ease: "power2.out",
-              scrollTrigger: {
-                trigger: transitionRef.current,
-                start: "top 95%",
-              },
-            }
-          );
-        }
       }
     }, sectionRef);
 
@@ -220,7 +201,7 @@ export function About() {
           className="flex items-center justify-between border-b border-[#20272A] pb-4"
         >
           <div className="flex items-center gap-3 font-mono text-xs">
-            <span className="text-[#FF174F] font-semibold tracking-widest uppercase">
+            <span className="text-accent font-semibold tracking-widest uppercase">
               01
             </span>
             <span className="text-[#5F6264]">/</span>
@@ -232,7 +213,7 @@ export function About() {
             <span className="hidden sm:inline">
               FIRST-YEAR BSC AI &amp; DATA SCIENCE
             </span>
-            <span className="hidden sm:inline">•</span>
+            <span className="hidden sm:inline">/</span>
             <span className="text-[#929292]">PERSPECTIVE &amp; DRIVE</span>
           </div>
         </div>
@@ -265,13 +246,13 @@ export function About() {
                 {/* Specifier Tag Top Left */}
                 <div className="absolute top-3 left-3 bg-[#050505]/75 backdrop-blur-sm border border-white/10 px-2 py-0.5 z-10">
                   <span className="font-mono text-[9px] text-[#929292] tracking-widest uppercase block">
-                    IMG.01 // HERO ANCHOR
+                    {"IMG.01 // HERO ANCHOR"}
                   </span>
                 </div>
 
                 {/* Specifier Tag Top Right */}
                 <div className="absolute top-3 right-3 bg-[#050505]/75 backdrop-blur-sm border border-white/10 px-2 py-0.5 z-10">
-                  <span className="font-mono text-[9px] text-[#FF174F] tracking-widest uppercase block">
+                  <span className="font-mono text-[9px] text-accent tracking-widest uppercase block">
                     BSC AI &amp; DS
                   </span>
                 </div>
@@ -288,10 +269,10 @@ export function About() {
               </div>
 
               {/* Precise Architectural Corner Markers */}
-              <div className="absolute -top-1 -left-1 w-2.5 h-2.5 border-t border-l border-[#FF174F]/60" />
-              <div className="absolute -top-1 -right-1 w-2.5 h-2.5 border-t border-r border-[#FF174F]/60" />
-              <div className="absolute -bottom-1 -left-1 w-2.5 h-2.5 border-b border-l border-[#FF174F]/60" />
-              <div className="absolute -bottom-1 -right-1 w-2.5 h-2.5 border-b border-r border-[#FF174F]/60" />
+              <div className="absolute -top-1 -left-1 w-2.5 h-2.5 border-t border-l border-accent/60" />
+              <div className="absolute -top-1 -right-1 w-2.5 h-2.5 border-t border-r border-accent/60" />
+              <div className="absolute -bottom-1 -left-1 w-2.5 h-2.5 border-b border-l border-accent/60" />
+              <div className="absolute -bottom-1 -right-1 w-2.5 h-2.5 border-b border-r border-accent/60" />
             </div>
           </div>
 
@@ -300,18 +281,18 @@ export function About() {
             ref={headlineTopRef}
             className="absolute top-2 left-0 z-20 max-w-[500px] xl:max-w-[580px] pointer-events-none select-none"
           >
-            <span className="font-mono text-[10px] text-[#FF174F] tracking-[0.25em] uppercase block mb-2">
-              // FOUNDATIONAL DRIVERS
+            <span className="font-mono text-[10px] text-accent tracking-[0.25em] uppercase block mb-2">
+              {"// FOUNDATIONAL DRIVERS"}
             </span>
             <h2
               id="about-heading"
               className="text-5xl xl:text-7xl font-display font-extrabold text-[#F4F2EE] uppercase tracking-tight leading-[0.92]"
             >
               EXPLORING THE <br />
-              <span className="text-[#F4F2EE] underline decoration-[#FF174F]/60 decoration-1 underline-offset-8">
+              <span className="text-[#F4F2EE] underline decoration-accent/60 decoration-1 underline-offset-8">
                 FRONTIER OF
               </span> <br />
-              <span className="text-[#FF174F]">AI &amp; DATA.</span>
+              <span className="text-accent">AI &amp; DATA.</span>
             </h2>
           </div>
 
@@ -341,8 +322,8 @@ export function About() {
             ref={statementRef}
             className="absolute bottom-0 left-0 max-w-[420px] xl:max-w-[460px] space-y-3 text-left z-20"
           >
-            <div className="inline-flex items-center gap-2 text-[10px] font-mono text-[#FF174F] tracking-[0.2em] uppercase">
-              <span>01 // PERSPECTIVE</span>
+            <div className="inline-flex items-center gap-2 text-[10px] font-mono text-accent tracking-[0.2em] uppercase">
+              <span>{"01 // PERSPECTIVE"}</span>
             </div>
             <p className="text-[#929292] font-body text-sm xl:text-base leading-relaxed">
               {personalData.bio.detailedBio}
@@ -372,7 +353,7 @@ export function About() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/85 via-transparent to-transparent opacity-75 pointer-events-none" />
                 <div className="absolute top-2.5 left-2.5 bg-[#050505]/75 backdrop-blur-sm border border-white/10 px-2 py-0.5">
                   <span className="font-mono text-[9px] text-[#929292] tracking-widest uppercase block">
-                    IMG.01 // HERO ANCHOR
+                    {"IMG.01 // HERO ANCHOR"}
                   </span>
                 </div>
                 <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between font-mono z-10 text-xs">
@@ -384,30 +365,30 @@ export function About() {
                   </span>
                 </div>
               </div>
-              <div className="absolute -top-1 -left-1 w-2.5 h-2.5 border-t border-l border-[#FF174F]/60" />
-              <div className="absolute -top-1 -right-1 w-2.5 h-2.5 border-t border-r border-[#FF174F]/60" />
-              <div className="absolute -bottom-1 -left-1 w-2.5 h-2.5 border-b border-l border-[#FF174F]/60" />
-              <div className="absolute -bottom-1 -right-1 w-2.5 h-2.5 border-b border-r border-[#FF174F]/60" />
+              <div className="absolute -top-1 -left-1 w-2.5 h-2.5 border-t border-l border-accent/60" />
+              <div className="absolute -top-1 -right-1 w-2.5 h-2.5 border-t border-r border-accent/60" />
+              <div className="absolute -bottom-1 -left-1 w-2.5 h-2.5 border-b border-l border-accent/60" />
+              <div className="absolute -bottom-1 -right-1 w-2.5 h-2.5 border-b border-r border-accent/60" />
             </div>
           </div>
 
           {/* Editorial Display Headlines Mobile */}
           <div ref={headlineTopRef} className="space-y-3">
-            <span className="font-mono text-[10px] text-[#FF174F] tracking-[0.2em] uppercase block">
-              // FOUNDATIONAL DRIVERS
+            <span className="font-mono text-[10px] text-accent tracking-[0.2em] uppercase block">
+              {"// FOUNDATIONAL DRIVERS"}
             </span>
             <h2
               id="about-heading-mobile"
               className="text-3xl sm:text-4xl font-display font-extrabold text-[#F4F2EE] uppercase tracking-tight leading-[1.02]"
             >
               EXPLORING THE{" "}
-              <span className="text-[#F4F2EE] underline decoration-[#FF174F]/60 decoration-1 underline-offset-4">
+              <span className="text-[#F4F2EE] underline decoration-accent/60 decoration-1 underline-offset-4">
                 FRONTIER OF
               </span>{" "}
-              <span className="text-[#FF174F]">AI &amp; DATA.</span>
+              <span className="text-accent">AI &amp; DATA.</span>
             </h2>
             <p className="text-xs font-mono text-[#929292] tracking-wider uppercase border-l border-[#20272A] pl-3 py-1">
-              "{personalData.bio.secondaryStatement}"
+              &ldquo;{personalData.bio.secondaryStatement}&rdquo;
             </p>
           </div>
 
@@ -423,8 +404,8 @@ export function About() {
         <div className="space-y-6 pt-8 border-t border-[#20272A]">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div>
-              <span className="font-mono text-[10px] text-[#FF174F] tracking-[0.25em] uppercase block">
-                02 // CORE DRIVERS
+              <span className="font-mono text-[10px] text-accent tracking-[0.25em] uppercase block">
+                {"02 // CORE DRIVERS"}
               </span>
               <h3 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F4F2EE]">
                 CURIOSITY, POTENTIAL &amp; EXPERIMENTATION
@@ -448,18 +429,18 @@ export function About() {
                   onMouseLeave={() => setActivePillar(null)}
                   className={`relative p-5 sm:p-6 border transition-all duration-500 ease-out cursor-default group ${
                     isActive
-                      ? "border-[#FF174F]/60 bg-[#0D0F10] shadow-[0_0_25px_rgba(255,23,79,0.06)]"
+                      ? "border-accent/60 bg-[#0D0F10] shadow-[0_0_25px_var(--accent-subtle)]"
                       : "border-[#20272A] bg-[#050505] hover:border-white/20 hover:bg-[#0D0F10]/50"
                   }`}
                 >
                   {/* Card Header Tag & Number */}
                   <div className="flex items-center justify-between mb-4 border-b border-[#20272A] pb-3">
-                    <span className="text-[10px] text-[#FF174F] tracking-widest uppercase font-semibold">
+                    <span className="text-[10px] text-accent tracking-widest uppercase font-semibold">
                       {pillar.tag}
                     </span>
                     <span
                       className={`text-xs tracking-wider transition-colors duration-300 ${
-                        isActive ? "text-[#FF174F]" : "text-[#5F6264] group-hover:text-[#929292]"
+                        isActive ? "text-accent" : "text-[#5F6264] group-hover:text-[#929292]"
                       }`}
                     >
                       {pillar.number}
@@ -478,7 +459,7 @@ export function About() {
 
                   {/* Hairline Active Indicator Bar */}
                   <div
-                    className={`absolute bottom-0 left-0 right-0 h-[2px] bg-[#FF174F] transition-all duration-500 ${
+                    className={`absolute bottom-0 left-0 right-0 h-[2px] bg-accent transition-all duration-500 ${
                       isActive ? "w-full opacity-100" : "w-0 opacity-0"
                     }`}
                   />
@@ -497,7 +478,7 @@ export function About() {
         >
           {/* Metadata Block 1: Academic Focus */}
           <div className="space-y-2 border-b sm:border-b-0 sm:border-r border-[#20272A] pb-6 sm:pb-0 sm:pr-6">
-            <span className="text-[10px] text-[#FF174F] tracking-widest uppercase block">
+            <span className="text-[10px] text-accent tracking-widest uppercase block">
               01 / ACADEMIC STATUS
             </span>
             <span className="text-[#F4F2EE] text-sm font-display font-semibold block uppercase tracking-wide">
@@ -510,20 +491,20 @@ export function About() {
 
           {/* Metadata Block 2: Core Focus Areas */}
           <div className="space-y-2 border-b lg:border-b-0 lg:border-r border-[#20272A] pb-6 sm:pb-0 sm:pr-6">
-            <span className="text-[10px] text-[#FF174F] tracking-widest uppercase block">
+            <span className="text-[10px] text-accent tracking-widest uppercase block">
               02 / PRIMARY FOCUS
             </span>
             <span className="text-[#F4F2EE] text-sm font-display font-semibold block uppercase tracking-wide">
               AI &amp; WEB ARCHITECTURE
             </span>
             <span className="text-[10px] text-[#929292] block tracking-wider">
-              ML Models • Web Interfaces • Data Pipelines
+              ML Models / Web Interfaces / Data Pipelines
             </span>
           </div>
 
           {/* Metadata Block 3: Mindset */}
           <div className="space-y-2 border-b sm:border-b-0 sm:border-r border-[#20272A] pb-6 sm:pb-0 sm:pr-6">
-            <span className="text-[10px] text-[#FF174F] tracking-widest uppercase block">
+            <span className="text-[10px] text-accent tracking-widest uppercase block">
               03 / METHODOLOGY
             </span>
             <span className="text-[#F4F2EE] text-sm font-display font-semibold block uppercase tracking-wide">
@@ -536,42 +517,15 @@ export function About() {
 
           {/* Metadata Block 4: Location & Status */}
           <div className="space-y-2">
-            <span className="text-[10px] text-[#FF174F] tracking-widest uppercase block">
+            <span className="text-[10px] text-accent tracking-widest uppercase block">
               04 / LOCATION
             </span>
             <span className="text-[#F4F2EE] text-sm font-display font-semibold block uppercase tracking-wide">
               {personalData.contact.location}
             </span>
             <span className="text-[10px] text-[#929292] block tracking-wider flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block" />
               Open to Collaborative Projects
             </span>
-          </div>
-        </div>
-
-        {/* ==================================================================== */}
-        {/* VISUAL BRIDGE TRANSITION (ABOUT -> SKILLS / WORKS)                    */}
-        {/* ==================================================================== */}
-        <div
-          ref={transitionRef}
-          className="pt-12 border-t border-[#20272A] flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-[#5F6264] uppercase tracking-widest"
-        >
-          <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#929292]" />
-            <span className="text-[#929292]">01 / IDENTITY (ABOUT)</span>
-          </div>
-
-          <div className="hidden sm:flex items-center gap-4 text-[10px]">
-            <span className="h-[1px] w-16 bg-[#20272A]" />
-            <span className="text-[#FF174F]/80 font-semibold tracking-[0.25em]">
-              SEAMLESS FLOW → CAPABILITY
-            </span>
-            <span className="h-[1px] w-16 bg-[#20272A]" />
-          </div>
-
-          <div className="flex items-center gap-2">
-            <span className="text-[#5F6264]">02 / CAPABILITY (NEXT)</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-[#20272A]" />
           </div>
         </div>
       </div>

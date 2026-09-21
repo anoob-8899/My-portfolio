@@ -85,7 +85,7 @@ export function CustomCursor() {
           opacity: isVisible ? 1 : 0,
         }}
       >
-        <div className="relative -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 bg-white rounded-full shadow-[0_0_6px_rgba(255,255,255,0.8)]" />
+        <div className="relative -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 bg-white shadow-[0_0_6px_rgba(255,255,255,0.8)]" />
       </div>
 
       {/* Outer Magnetic / Trailing Ring */}

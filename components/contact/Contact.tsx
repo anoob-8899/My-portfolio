@@ -110,9 +110,9 @@ export function Contact() {
       aria-labelledby="contact-heading"
       className="relative min-h-[90vh] w-full py-20 sm:py-28 md:py-36 px-6 md:px-12 lg:px-16 bg-[#050505] border-t border-white/12 overflow-hidden flex flex-col justify-between"
     >
-      {/* Background Subtle Ambient Crimson Glow */}
+      {/* Background Subtle Ambient Cyan Glow */}
       <div
-        className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#FF174F]/10 rounded-full blur-[180px] pointer-events-none"
+        className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[180px] pointer-events-none"
         aria-hidden="true"
       />
 
@@ -143,7 +143,7 @@ export function Contact() {
           className="flex items-center justify-between border-b border-white/12 pb-5"
         >
           <div className="flex items-center gap-3">
-            <span className="font-mono text-xs text-[#FF174F] tracking-widest uppercase font-bold">
+            <span className="font-mono text-xs text-accent tracking-widest uppercase font-bold">
               03
             </span>
             <span className="font-mono text-xs text-[#929292] tracking-widest uppercase">
@@ -151,7 +151,7 @@ export function Contact() {
             </span>
           </div>
           <div className="flex items-center gap-2 text-[#929292] font-mono text-[11px] tracking-widest uppercase">
-            <MapPin className="w-3 h-3 text-[#FF174F]" />
+            <MapPin className="w-3 h-3 text-accent" />
             <span>{personalData.contact.location}</span>
           </div>
         </div>
@@ -193,20 +193,20 @@ export function Contact() {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
               <a
                 href={`mailto:${personalData.contact.email}`}
-                className="group flex-1 inline-flex items-center justify-between px-5 py-4 bg-[#121517] border border-white/12 hover:border-[#FF174F]/60 transition-all font-mono text-xs sm:text-sm text-[#F5F5F5] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#FF174F] min-h-[48px]"
+                className="group flex-1 inline-flex items-center justify-between px-5 py-4 bg-[#121517] border border-white/12 hover:border-accent/60 transition-all font-mono text-xs sm:text-sm text-[#F5F5F5] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent min-h-[48px]"
                 aria-label={`Send email to Vincent Antony at ${personalData.contact.email}`}
                 data-cursor="EMAIL"
               >
-                <span className="truncate group-hover:text-[#FF174F] transition-colors">
+                <span className="truncate group-hover:text-accent transition-colors">
                   {personalData.contact.email}
                 </span>
-                <ArrowUpRight className="w-4 h-4 text-[#929292] group-hover:text-[#FF174F] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0 ml-2" />
+                <ArrowUpRight className="w-4 h-4 text-[#929292] group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0 ml-2" />
               </a>
 
               <button
                 type="button"
                 onClick={handleCopyEmail}
-                className="px-4 py-4 bg-[#20272A]/60 border border-white/12 hover:border-white/30 text-[#929292] hover:text-[#F5F5F5] transition-all font-mono text-xs flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#FF174F] min-h-[48px] shrink-0"
+                className="px-4 py-4 bg-[#20272A]/60 border border-white/12 hover:border-white/30 text-[#929292] hover:text-[#F5F5F5] transition-all font-mono text-xs flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent min-h-[48px] shrink-0"
                 title="Copy email to clipboard"
                 aria-label="Copy email address to clipboard"
                 data-cursor="COPY"
@@ -249,15 +249,15 @@ export function Contact() {
                   href={personalData.contact.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center justify-between px-4 py-2.5 bg-[#121517]/50 border border-white/12 hover:border-[#FF174F]/50 transition-all font-mono text-xs text-[#929292] hover:text-[#F5F5F5] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#FF174F]"
+                  className="group flex items-center justify-between px-4 py-2.5 bg-[#121517]/50 border border-white/12 hover:border-accent/50 transition-all font-mono text-xs text-[#929292] hover:text-[#F5F5F5] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent"
                   aria-label="Visit Vincent Antony GitHub Profile"
                   data-cursor="GITHUB"
                 >
                   <div className="flex items-center gap-2">
-                    <Github className="w-3.5 h-3.5 text-[#929292] group-hover:text-[#FF174F] transition-colors" />
+                    <Github className="w-3.5 h-3.5 text-[#929292] group-hover:text-accent transition-colors" />
                     <span className="tracking-wider">GITHUB</span>
                   </div>
-                  <span className="text-[#929292] group-hover:text-[#FF174F] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
+                  <span className="text-[#929292] group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
                     ↗
                   </span>
                 </a>
@@ -268,15 +268,15 @@ export function Contact() {
                   href={personalData.contact.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center justify-between px-4 py-2.5 bg-[#121517]/50 border border-white/12 hover:border-[#FF174F]/50 transition-all font-mono text-xs text-[#929292] hover:text-[#F5F5F5] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#FF174F]"
+                  className="group flex items-center justify-between px-4 py-2.5 bg-[#121517]/50 border border-white/12 hover:border-accent/50 transition-all font-mono text-xs text-[#929292] hover:text-[#F5F5F5] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent"
                   aria-label="Visit Vincent Antony LinkedIn Profile"
                   data-cursor="LINKEDIN"
                 >
                   <div className="flex items-center gap-2">
-                    <Linkedin className="w-3.5 h-3.5 text-[#929292] group-hover:text-[#FF174F] transition-colors" />
+                    <Linkedin className="w-3.5 h-3.5 text-[#929292] group-hover:text-accent transition-colors" />
                     <span className="tracking-wider">LINKEDIN</span>
                   </div>
-                  <span className="text-[#929292] group-hover:text-[#FF174F] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
+                  <span className="text-[#929292] group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
                     ↗
                   </span>
                 </a>
@@ -287,15 +287,15 @@ export function Contact() {
                   href={personalData.contact.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center justify-between px-4 py-2.5 bg-[#121517]/50 border border-white/12 hover:border-[#FF174F]/50 transition-all font-mono text-xs text-[#929292] hover:text-[#F5F5F5] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#FF174F]"
+                  className="group flex items-center justify-between px-4 py-2.5 bg-[#121517]/50 border border-white/12 hover:border-accent/50 transition-all font-mono text-xs text-[#929292] hover:text-[#F5F5F5] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent"
                   aria-label="Visit Vincent Antony Instagram Profile"
                   data-cursor="INSTAGRAM"
                 >
                   <div className="flex items-center gap-2">
-                    <Instagram className="w-3.5 h-3.5 text-[#929292] group-hover:text-[#FF174F] transition-colors" />
+                    <Instagram className="w-3.5 h-3.5 text-[#929292] group-hover:text-accent transition-colors" />
                     <span className="tracking-wider">INSTAGRAM</span>
                   </div>
-                  <span className="text-[#929292] group-hover:text-[#FF174F] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
+                  <span className="text-[#929292] group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
                     ↗
                   </span>
                 </a>
@@ -323,12 +323,12 @@ export function Contact() {
           <button
             type="button"
             onClick={handleScrollToTop}
-            className="group inline-flex items-center gap-2.5 px-4 py-2 bg-[#121517] border border-white/12 hover:border-[#FF174F] text-[#929292] hover:text-[#F5F5F5] transition-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#FF174F]"
+            className="group inline-flex items-center gap-2.5 px-4 py-2 bg-[#121517] border border-white/12 hover:border-accent text-[#929292] hover:text-[#F5F5F5] transition-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent"
             aria-label="Scroll back to top of page"
             data-cursor="TOP"
           >
             <span className="tracking-widest uppercase text-xs">BACK TO TOP</span>
-            <ArrowUp className="w-3.5 h-3.5 text-[#FF174F] group-hover:-translate-y-1 transition-transform" />
+            <ArrowUp className="w-3.5 h-3.5 text-accent group-hover:-translate-y-1 transition-transform" />
           </button>
 
           {/* Right Copyright */}

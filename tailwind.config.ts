@@ -20,9 +20,9 @@ const config: Config = {
           muted: "#5F6264",
         },
         accent: {
-          DEFAULT: "#FF174F",
-          glow: "rgba(255, 23, 79, 0.35)",
-          subtle: "rgba(255, 23, 79, 0.12)",
+          DEFAULT: "var(--accent)",
+          glow: "var(--accent-glow)",
+          subtle: "var(--accent-subtle)",
         },
         cool: {
           surface: "#20272A",

@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export function HeroTypography() {
   return (
     <div className="flex flex-col space-y-3 z-20">
-      {/* Small Editorial Phrase */}
+      {/* Small Editorial Phrase (No dot preceding) */}
       <motion.div
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
@@ -36,11 +36,11 @@ export function HeroTypography() {
         className="pt-1"
       >
         <h2 className="font-sans text-sm sm:text-base md:text-lg lg:text-xl font-semibold tracking-widest text-[#F5F5F5] uppercase">
-          PASSIONATE AI & DATA SCIENCE STUDENT
+          PASSIONATE AI &amp; DATA SCIENCE STUDENT
         </h2>
       </motion.div>
 
-      {/* Identity Line */}
+      {/* Identity Line with clean slashes instead of dots */}
       <motion.div
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
@@ -48,13 +48,12 @@ export function HeroTypography() {
         className="pt-2 border-t border-white/10 max-w-xl"
       >
         <p className="font-mono text-xs sm:text-sm tracking-wider text-[#929292] uppercase">
-          DATA <span className="text-[#5F6264]">•</span> DESIGN{" "}
-          <span className="text-[#5F6264]">•</span> EDIT{" "}
-          <span className="text-[#5F6264]">•</span> CREATIVE{" "}
-          <span className="text-[#5F6264]">•</span> DETERMINED
+          DATA <span className="text-[#5F6264]">/</span> DESIGN{" "}
+          <span className="text-[#5F6264]">/</span> EDIT{" "}
+          <span className="text-[#5F6264]">/</span> CREATIVE{" "}
+          <span className="text-[#5F6264]">/</span> DETERMINED
         </p>
       </motion.div>
     </div>
   );
 }
-

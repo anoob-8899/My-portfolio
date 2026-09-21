@@ -80,17 +80,16 @@ export function LaptopMockup({ videoSrc, screenshots, altText }: LaptopMockupPro
           aria-hidden="true"
         />
         <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] h-[75%] bg-[#FF174F]/[0.03] blur-[100px] rounded-full pointer-events-none -z-10"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] h-[75%] bg-accent/[0.03] blur-[100px] rounded-full pointer-events-none -z-10"
           aria-hidden="true"
         />
 
         {/* LAPTOP DISPLAY FRAME (Top Lid) */}
         <div className="relative w-full aspect-[16/10] bg-[#121416] rounded-t-2xl sm:rounded-t-[20px] p-2.5 sm:p-4 md:p-5 border border-white/[0.14] shadow-[0_20px_50px_rgba(0,0,0,0.8)] overflow-hidden">
           
-          {/* Top Bezel Camera Dot & Sensor */}
-          <div className="absolute top-1.5 sm:top-2.5 left-1/2 -translate-x-1/2 flex items-center gap-2 z-30">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#08090a] border border-white/20 shadow-inner inline-block" />
-            <span className="w-1 h-1 rounded-full bg-emerald-500/80 inline-block animate-pulse" title="Screen Display Active" />
+          {/* Top Bezel Camera Slit */}
+          <div className="absolute top-1.5 sm:top-2.5 left-1/2 -translate-x-1/2 flex items-center z-30">
+            <span className="w-5 h-[2px] bg-white/20 inline-block" />
           </div>
 
           {/* SCREEN DISPLAY CONTAINER */}
@@ -150,7 +149,7 @@ export function LaptopMockup({ videoSrc, screenshots, altText }: LaptopMockupPro
                       key={idx}
                       onClick={() => setActiveScreenshot(idx)}
                       className={`h-1 rounded-full transition-all duration-300 ${
-                        idx === activeScreenshot ? "w-6 bg-[#FF174F]" : "w-2 bg-white/30 hover:bg-white/60"
+                        idx === activeScreenshot ? "w-6 bg-accent" : "w-2 bg-white/30 hover:bg-white/60"
                       }`}
                       aria-label={`View slide ${idx + 1}`}
                     />
@@ -169,12 +168,12 @@ export function LaptopMockup({ videoSrc, screenshots, altText }: LaptopMockupPro
                 >
                   {isPlaying ? (
                     <>
-                      <Pause className="w-3 h-3 text-[#FF174F]" />
+                      <Pause className="w-3 h-3 text-accent" />
                       <span>PAUSE</span>
                     </>
                   ) : (
                     <>
-                      <Play className="w-3 h-3 text-[#FF174F]" />
+                      <Play className="w-3 h-3 text-accent" />
                       <span>PLAY</span>
                     </>
                   )}
@@ -190,7 +189,7 @@ export function LaptopMockup({ videoSrc, screenshots, altText }: LaptopMockupPro
               >
                 {manualFallback ? (
                   <>
-                    <Film className="w-3 h-3 text-[#FF174F]" />
+                    <Film className="w-3 h-3 text-accent" />
                     <span>VIDEO MODE</span>
                   </>
                 ) : (

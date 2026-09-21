@@ -10,7 +10,7 @@ The visual identity is designed to communicate **technical depth, editorial soph
 ### Core Aesthetic Pillars
 - **Cinematic & Editorial Rhythm**: Generous vertical whitespace, high-contrast monochrome backbone with tactical accent highlights, stark typographic scale, and widescreen media framing.
 - **Architectural Precision**: Hairline structural grids (`rgba(244, 242, 238, 0.08)` / `#20272A`), zero-radius (`rounded-none`) or micro-radius (`rounded-sm` 2px-4px) boundaries, precise monospace metadata labels.
-- **Selective Accent Focus**: Signature Magenta (`#FF174F`) is strictly capped at 5%–10% visual coverage across any view (active indicators, indexes, key interactive focus states).
+- **Selective Accent Focus**: Electric Cyan (`#00E5FF`) is strictly capped at 5%–10% visual coverage across any view (active indicators, indexes, key interactive focus states).
 
 ### Explicit Anti-Patterns Banned
 - ❌ **No Rounded Card Overload**: Standard rounded cards (`rounded-2xl`, `rounded-3xl`) are strictly avoided in favor of sharp architectural hairline grid structures.
@@ -31,7 +31,7 @@ The visual identity is designed to communicate **technical depth, editorial soph
 | `text-primary` | `#F4F2EE` | Off-white bone/silk primary reading text and main headers |
 | `text-secondary` | `#929292` | Neutral grey for body paragraphs, descriptions, and secondary metadata |
 | `text-muted` | `#5F6264` | Quiet structural text, index numbers, disabled labels, border guides |
-| `accent` | `#FF174F` | Signature Crimson Magenta — selective focal points, active states |
+| `accent` | `#00E5FF` | Signature Electric Cyan — selective focal points, active states |
 | `cool-surface` | `#20272A` | Cool slate structural borders, secondary button outlines, badge backgrounds |
 | `cool-border` | `rgba(244, 242, 238, 0.08)` | Hairline grid lines and container dividers |
 
@@ -85,7 +85,7 @@ The typography balances geometric technological display face (`Space Grotesk`) w
    - Dark background (`#0D0F10`), 1px cool hairline border (`#20272A`), white text.
    - Non-magnetic, responsive border/color transition on hover.
 3. **Ghost Text Link (`.btn-ghost`)**:
-   - Minimal inline text link with kinetic underline slide animation in Accent Magenta (`#FF174F`).
+   - Minimal inline text link with kinetic underline slide animation in Electric Cyan (`#00E5FF`).
 
 ### Image Treatment & Media Framing
 - **Portrait & Identity Imagery (`.img-portrait`)**:
@@ -96,7 +96,7 @@ The typography balances geometric technological display face (`Space Grotesk`) w
 
 ### Cursor Behavior
 - **Precision Dual Element Cursor**:
-  - Center 6px dot + smooth lerp trailing ring in `#FF174F` tint.
+  - Center dot + smooth lerp trailing ring in `#00E5FF` / white tint.
   - **Touch & Pointer Query Check**: Disabled automatically on mobile/touch screens (`(hover: hover) and (pointer: fine)`).
   - Keyboard accessible: Does not override standard `:focus-visible` outlines.
 

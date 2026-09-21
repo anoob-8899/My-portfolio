@@ -259,9 +259,8 @@ export function CaseStudyView({ project }: CaseStudyViewProps) {
             {/* Window / Mockup Header Bar */}
             <div className="flex items-center justify-between px-3 py-2 bg-[#080A0B] rounded-t-md border-b border-cool-border/40 mb-2">
               <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-white/20" />
-                <span className="w-2.5 h-2.5 rounded-full bg-[#5F6264]/40" />
-                <span className="w-2.5 h-2.5 rounded-full bg-[#20272A]" />
+                <span className="w-6 h-[1.5px] bg-white/20" />
+                <span className="w-4 h-[1.5px] bg-[#5F6264]/40" />
               </div>
               <span className="font-mono text-[10px] sm:text-xs text-text-muted tracking-widest uppercase">
                 CASE STUDY VISUAL — {project.slug}.app
@@ -309,7 +308,6 @@ export function CaseStudyView({ project }: CaseStudyViewProps) {
           >
             {/* Header label */}
             <div className="flex items-center gap-2 text-accent tracking-[0.2em] uppercase font-semibold border-b border-cool-border pb-3">
-              <span className="w-1.5 h-1.5 bg-accent rounded-full" />
               <span>PROJECT SPECIFICATIONS</span>
             </div>
 

@@ -111,9 +111,8 @@ export function LaptopShowcase() {
                   {/* Laptop Screen Bezel Header */}
                   <div className="flex items-center justify-between px-3 py-2 bg-[#080A0B] rounded-t-md border-b border-cool-border/40 mb-2">
                     <div className="flex items-center gap-2">
-                      <span className="w-2.5 h-2.5 rounded-full bg-[#FF174F]/80" />
-                      <span className="w-2.5 h-2.5 rounded-full bg-[#5F6264]/40" />
-                      <span className="w-2.5 h-2.5 rounded-full bg-[#20272A]" />
+                      <span className="w-6 h-[1.5px] bg-accent/80" />
+                      <span className="w-4 h-[1.5px] bg-[#5F6264]/40" />
                     </div>
                     <span className="font-mono text-[10px] sm:text-xs text-text-muted tracking-widest uppercase">
                       PORTFOLIO WORKSPACE — {project.slug}.app
@@ -133,7 +132,7 @@ export function LaptopShowcase() {
                     {/* Coming Soon Overlay Indicator */}
                     {project.isComingSoon && (
                       <div className="absolute inset-0 bg-[#050505]/75 backdrop-blur-xs flex flex-col items-center justify-center p-6 text-center">
-                        <span className="font-mono text-xs text-[#FF174F] tracking-[0.2em] uppercase mb-2 font-semibold">
+                        <span className="font-mono text-xs text-accent tracking-[0.2em] uppercase mb-2 font-semibold">
                           PROJECT IN DEVELOPMENT
                         </span>
                         <h4 className="font-display text-lg sm:text-xl font-bold text-[#F4F2EE] uppercase">
@@ -177,14 +176,14 @@ export function LaptopShowcase() {
                 <div className="project-cta md:col-span-4 md:flex md:justify-end">
                   <Link
                     href={`/work/${project.slug}`}
-                    className="group inline-flex items-center gap-3 font-mono text-xs md:text-sm font-semibold tracking-[0.15em] text-[#F4F2EE] hover:text-[#FF174F] transition-colors py-2"
+                    className="group inline-flex items-center gap-3 font-mono text-xs md:text-sm font-semibold tracking-[0.15em] text-[#F4F2EE] hover:text-accent transition-colors py-2"
                     data-cursor="VIEW"
                   >
                     <span className="relative">
                       VIEW CASE STUDY
-                      <span className="absolute left-0 -bottom-1 w-0 h-[1px] bg-[#FF174F] group-hover:w-full transition-all duration-300" />
+                      <span className="absolute left-0 -bottom-1 w-0 h-[1px] bg-accent group-hover:w-full transition-all duration-300" />
                     </span>
-                    <ArrowRight className="w-4 h-4 text-[#FF174F] group-hover:translate-x-1.5 transition-transform duration-300" />
+                    <ArrowRight className="w-4 h-4 text-accent group-hover:translate-x-1.5 transition-transform duration-300" />
                   </Link>
                 </div>
 

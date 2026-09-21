@@ -145,7 +145,7 @@ export function Works() {
           className="flex items-center justify-between border-b border-[#20272A] pb-4"
         >
           <div className="flex items-center gap-3 font-mono text-xs">
-            <span className="text-[#FF174F] font-semibold tracking-widest uppercase">
+            <span className="text-accent font-semibold tracking-widest uppercase">
               02
             </span>
             <span className="text-[#5F6264]">/</span>
@@ -156,15 +156,15 @@ export function Works() {
 
           <div className="flex items-center gap-4 font-mono text-[10px] sm:text-xs text-[#5F6264] tracking-[0.2em] uppercase">
             <span className="hidden sm:inline">FEATURED PROJECT SHOWCASE</span>
-            <span className="hidden sm:inline">•</span>
+            <span className="hidden sm:inline">/</span>
             <span className="text-[#929292]">COLLEGE DEPARTMENT</span>
           </div>
         </div>
 
         {/* PROJECT TITLE & SUBTITLE HEADER */}
         <div ref={titleRef} className="space-y-3">
-          <span className="font-mono text-[10px] text-[#FF174F] tracking-[0.25em] uppercase block">
-            // FEATURED PROJECT
+          <span className="font-mono text-[10px] text-accent tracking-[0.25em] uppercase block">
+            {"// FEATURED PROJECT"}
           </span>
 
           <h2
@@ -172,7 +172,7 @@ export function Works() {
             className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-extrabold text-[#F5F5F5] uppercase tracking-tight leading-[0.92]"
           >
             COLLEGE DEPARTMENT <br className="hidden sm:block" />
-            <span className="text-[#FF174F]">WEBSITE</span>
+            <span className="text-accent">WEBSITE</span>
           </h2>
 
           <p className="text-sm sm:text-base font-mono text-[#929292] tracking-wider uppercase pt-2">

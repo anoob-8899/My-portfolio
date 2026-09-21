@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef, useEffect, useState } from "react";
+import Link from "next/link";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { skillCategories } from "@/data/skills";
@@ -104,7 +105,7 @@ export function Skills() {
             </h2>
 
             <p className="font-mono text-xs text-text-secondary tracking-widest uppercase max-w-xs">
-              // DATA-DRIVEN STACK BASED ON CONTINUOUS LEARNING &amp; PROJECT IMPLEMENTATION.
+              {"// DATA-DRIVEN STACK BASED ON CONTINUOUS LEARNING & PROJECT IMPLEMENTATION."}
             </p>
           </div>
         </div>
@@ -169,9 +170,6 @@ export function Skills() {
                         >
                           {item.name}
                         </span>
-                        {isHovered && (
-                          <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                        )}
                       </div>
                       <p className="font-mono text-[11px] text-text-secondary">
                         {item.label}
@@ -190,11 +188,16 @@ export function Skills() {
           ))}
         </div>
 
-        {/* Skills Section Footer / Narrative Bridge to CON 4 */}
+        {/* Skills Section Footer Navigation */}
         <div className="pt-12 border-t border-cool-border flex items-center justify-between text-xs font-mono text-text-muted uppercase tracking-widest">
-          <span>02 / SKILLS COMPLETE</span>
-          <span className="text-accent hidden sm:inline">PROCEED TO CON 4 — SELECTED WORK</span>
-          <span>NEXT: SELECTED WORK</span>
+          <span>TECHNICAL MATRIX</span>
+          <Link
+            href="/projects"
+            className="text-accent hover:text-white transition-colors inline-flex items-center gap-2 font-semibold"
+          >
+            <span>PROCEED TO SELECTED WORKS</span>
+            <span>→</span>
+          </Link>
         </div>
 
       </div>
